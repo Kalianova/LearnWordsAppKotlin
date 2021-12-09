@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/word_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:hint="Слово"
+        app:layout_constraintBottom_toTopOf="@+id/translation_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repeat_button" />
+
+    <EditText
+        android:id="@+id/translation_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:hint="Перевод"
+        app:layout_constraintBottom_toTopOf="@+id/add_vocab_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word_text" />
+
+    <Button
+        android:id="@+id/add_vocab_button"
+        android:layout_width="227dp"
+        android:layout_height="58dp"
+        android:text="Добавить в словарь"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/translation_text" />
+
+    <Button
+        android:id="@+id/vocab_button"
+        android:layout_width="223dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:text="Словарь"
+        android:onClick="openVocabular"
+        app:layout_constraintBottom_toTopOf="@+id/learn_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/learn_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выучить новые слова"
+        android:onClick="openLearningNewWords"
+        app:layout_constraintBottom_toTopOf="@+id/repeat_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vocab_button" />
+
+    <Button
+        android:id="@+id/repeat_button"
+        android:layout_width="226dp"
+        android:layout_height="48dp"
+        android:text="Повторить слова"
+        app:layout_constraintBottom_toTopOf="@+id/word_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/learn_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
