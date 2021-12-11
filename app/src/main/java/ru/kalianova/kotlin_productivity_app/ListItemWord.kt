@@ -13,7 +13,7 @@ data class ListItemWord(
     @ColumnInfo(name = DatabaseConstants.COLUMN_NAME_THEME, defaultValue = "0") var theme: Int,
     @ColumnInfo(name = DatabaseConstants.COLUMN_NAME_TRANSLATION)var translation: String,
     @ColumnInfo(name = DatabaseConstants.COLUMN_NAME_COUNT)var count: Int,
-    @ColumnInfo(name = DatabaseConstants.COLUMN_NAME_DATE_TIME)var date_time: String)
+    @ColumnInfo(name = DatabaseConstants.COLUMN_NAME_DATE_TIME)var date_time: String?)
 {
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = DatabaseConstants.COLUMN_NAME_ID) var id: Int? = null
 }

@@ -30,7 +30,11 @@ class MainActivity : AppCompatActivity() {
         wordTranslation = findViewById(R.id.translation_text)
 
 
-        db = Room.databaseBuilder(applicationContext, WordsDatabase::class.java, DatabaseConstants.TABLE_NAME).build()
+        db = Room.databaseBuilder(
+            applicationContext,
+            WordsDatabase::class.java,
+            DatabaseConstants.TABLE_NAME
+        ).build()
         saveButton.setOnClickListener {
             val word = wordText.text.toString()
             val translation = wordTranslation.text.toString()
@@ -56,11 +60,18 @@ class MainActivity : AppCompatActivity() {
 
     fun openVocabular(view: View) {
         val intent = Intent(this, ThemesList::class.java)
+        intent.putExtra("type", "vocab")
         startActivity(intent)
     }
 
     fun openLearningNewWords(view: View) {
-        val intent = Intent(this, TestNewWords::class.java)
+        val intent = Intent(this, ThemesList::class.java)
+        intent.putExtra("type", "test")
+        startActivity(intent)
+    }
+
+    fun openRepeatingWords(view: View) {
+        val intent = Intent(this, RepeatWords::class.java)
         startActivity(intent)
     }
 }

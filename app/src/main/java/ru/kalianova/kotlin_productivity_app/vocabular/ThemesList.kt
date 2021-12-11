@@ -11,17 +11,24 @@ import kotlinx.coroutines.launch
 import ru.kalianova.kotlin_productivity_app.ListItemTheme
 import ru.kalianova.kotlin_productivity_app.ListItemWord
 import ru.kalianova.kotlin_productivity_app.R
+import ru.kalianova.kotlin_productivity_app.TestNewWords
 import ru.kalianova.kotlin_productivity_app.database.DatabaseConstants
 import ru.kalianova.kotlin_productivity_app.database.WordsDatabase
 
 class ThemesList : AppCompatActivity() {
+    var type: String = "vocab"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_themes_list)
+        type = intent.getStringExtra("type").toString()
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = ThemesAdapter(getWords()) {
-            val intent = Intent(this, wordsList::class.java)
+            var intent: Intent
+            if (type == "vocab")
+                intent = Intent(this, wordsList::class.java)
+            else
+                intent = Intent(this, TestNewWords::class.java)
             intent.putExtra("theme", it.intent.toString())
             startActivity(intent)
         }

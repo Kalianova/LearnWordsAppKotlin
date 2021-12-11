@@ -19,6 +19,9 @@
             android:name=".TestNewWords"
             android:exported="true" />
         <activity
+            android:name=".RepeatWords"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

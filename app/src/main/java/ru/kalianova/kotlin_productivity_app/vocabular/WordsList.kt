@@ -21,22 +21,25 @@ class wordsList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_words_list)
 
-
         name = intent.getStringExtra("theme")?.toInt() ?: 0
-        if (name == 0)
-            db = Room.databaseBuilder(applicationContext, WordsDatabase::class.java, DatabaseConstants.TABLE_NAME).fallbackToDestructiveMigration().build()
-        else
-            db = Room.databaseBuilder(applicationContext, WordsDatabase::class.java, DatabaseConstants.TABLE_NAME)
-                .createFromAsset("databases/weather.db").fallbackToDestructiveMigration().build()
+        db = Room.databaseBuilder(
+            applicationContext,
+            WordsDatabase::class.java,
+            DatabaseConstants.TABLE_NAME
+        ).createFromAsset("databases/weather.db").build()
         //db.userDao().deleteAll()
-        val recyclerView:RecyclerView = findViewById(R.id.recyclerView)
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         GlobalScope.launch {
-            recyclerView.adapter = WordsAdapter(getWords())
+            recyclerView.adapter = WordsAdapter(getWords()){
+                GlobalScope.launch {
+                    db.userDao().delete(it)
+                }
+            }
         }
     }
 
-    private suspend fun getWords(): List<ListItemWord>{
-        return  db.userDao().getAllWordsTheme(name)
+    private suspend fun getWords(): MutableList<ListItemWord> {
+        return db.userDao().getAllWordsTheme(name).toMutableList()
     }
 }

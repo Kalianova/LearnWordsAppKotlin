@@ -5,14 +5,16 @@
       <map>
         <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1" />
         <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/activity_repeat_words.xml" value="0.18854166666666666" />
         <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/activity_test4variants.xml" value="0.152" />
-        <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/activity_test_new_words.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/activity_test_new_words.xml" value="0.2" />
         <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/activity_themes_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/activity_vocabular.xml" value="0.1" />
         <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/activity_word_item.xml" value="0.264" />
         <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/activity_words_list.xml" value="0.1" />
         <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/content_scrolling.xml" value="0.1" />
         <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/layout/vocab_list.xml" value="0.18854166666666666" />
+        <entry key="..\:/Projects/kotlin_productivity_app/app/src/main/res/menu/menu_vocabular.xml" value="0.536" />
       </map>
     </option>
   </component>

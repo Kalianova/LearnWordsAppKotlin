@@ -9,11 +9,6 @@ object DatabaseConstants {
     const val COLUMN_NAME_COUNT = "count"
     const val COLUMN_NAME_DATE_TIME = "date_time"
 
-    const val DB_VERSION = 1
+    const val DB_VERSION = 3
 
-    const val TABLE_1 = "weather"
-    const val TABLE_2 = "mood"
-    const val TABLE_3 = "nature"
-    const val TABLE_4 = "family"
-    const val TABLE_5 = "home"
 }
